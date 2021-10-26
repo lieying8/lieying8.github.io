@@ -1,0 +1,275 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>爱奇艺视频f4v、ts格式转换为mp4 | Gridea</title>
+<link rel="shortcut icon" href="https://lieying8.github.io/favicon.ico?v=1635221804442">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://lieying8.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="爱奇艺视频f4v、ts格式转换为mp4 | Gridea - Atom Feed" href="https://lieying8.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="======
+准备工作：
+
+Chrome浏览器（Chrome浏览器商店安装扩展Tampermonkey，Tampermonkey中安装webvideoDownloader脚本，脚本地址）
+Python3.5或以上（官网下载：https://..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://lieying8.github.io">
+  <img class="avatar" src="https://lieying8.github.io/images/avatar.png?v=1635221804442" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              爱奇艺视频f4v、ts格式转换为mp4
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-10-26
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>======</p>
+<h2 id="准备工作"><strong>准备工作：</strong></h2>
+<ol>
+<li>Chrome浏览器（Chrome浏览器商店安装扩展Tampermonkey，Tampermonkey中安装webvideoDownloader脚本，<a href="https://github.com/jaysonlong/webvideo-downloader/raw/master/violentmonkey/WebVideoDownloader.user.js">脚本地址</a>）</li>
+<li>Python3.5或以上（官网下载：https://www.python.org/downloads/，下载最新版pkg文件直接安装。打开终端输入Python3看是否成功安装，Mac默认安装的是Python2，基本弃用）</li>
+<li>FFmpeg利用终端安装，代码如下：</li>
+</ol>
+<pre><code class="language-python">brew install FFmpeg
+#软件的安装路径一般在/usr/local/bin/ffmpeg
+#/usr一般为隐藏目录，用easyfind软件可以搜索到
+</code></pre>
+<ol start="4">
+<li>下载GitHub源代码，code下的 download zip，或releases下载发行版，下载好后解压到桌面。Mac下的桌面路径为（/Users/syk/Desktop/webvideo-downloader/）</li>
+<li>爱奇艺视频网页链接，案例：https://www.iqiyi.com/v_19rx3cfzy8.html</li>
+<li>安装Python3依赖包</li>
+</ol>
+<pre><code class="language-python">cd webvideo-downloader/downloader
+pip install -r requirements.txt
+#提示错误，因为电脑自带没有安装pip，使用命令sudo easy_install pip安装会默认安装在系统Python2的下面，这样是不行的。解决办法如下：
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+#此条命令解析：下载并保存这个pip文件
+#接着用Python3运行这个文件
+python3 get-pip.py
+#以后就可以用pip3 install安装文件了
+</code></pre>
+<ol start="7">
+<li>所有准备工作就绪，开始进入操作步骤。</li>
+</ol>
+<h2 id="操作步骤"><strong>操作步骤：</strong></h2>
+<ul>
+<li>打开终端输入：</li>
+</ul>
+<pre><code class="language-python">python3 daemon.py
+#打开项目运行文件
+</code></pre>
+<ul>
+<li>打开Chrome浏览器，输入需要下载的爱奇艺视频地址，视频左侧会出现下载按钮，点击后会发现终端代码已开始运行，finish大功告成。文件输出路径/Users/syk/Desktop/webvideo-downloader/videos</li>
+</ul>
+<h2 id="方法二"><strong>方法二：</strong></h2>
+<blockquote>
+<ol>
+<li>打开网址：https://tool.lu/videoparser/输入需要解析的视频地址。</li>
+<li>下载视频（如果下载无法应，右键复制链接地址，在新的标签页打开即可）</li>
+<li>下载的视频格式为f4v，我们需要将f4v转换为mp4，打开终端，cd到视频当前目录，例如桌面视频文件1.f4v</li>
+</ol>
+<pre><code class="language-python">cd /Users/syk/Desktop
+ffmpeg -i 1.f4v -vcodec copy -acodec copy 1.mp4
+#命令解析命令解析：-i，指定输入视频路径；-codec copy，（同理-vcodec copy也一样）填上该参数可以省去解码和编码的过程，使视频格式转换更快，如果加上这个参数时有报错，可以把这个参数去掉，1.mp4是输出视频路径；
+
+#FFmpeg常用命令以及参数
+-i 指定要转换视频的源文件
+-s 视频转换后视频的分辨率
+-vcodec 视频转换时使用的编解码器（-codecs）
+-r 视频转换换的桢率(默认25桢每秒)
+-b 视频转换换的bit率
+-ab 音频转换后的bit率(默认64k)
+-acodec 制定音频使用的编码器（-codecs）
+-ac 制定转换后音频的声道
+-ar 音频转换后的采样率
+-an 禁用音频
+-vn 禁用视频
+-acodec copy 复制音频，不转码
+-vcodec copy 复制视频，不转码
+# 设置参数转
+ffmpeg -i 88885.mp4 -vcodec h264 -r 29 -b:v 43382k 88885_h264.mp4
+# 直接转码
+# 视频文件转化为h264编码格式，直接转为h264编码格式
+ffmpeg -i 88885.mp4 -vcodec h264 88885_h264.mp4
+</code></pre>
+</blockquote>
+<h2 id="方法三"><strong>方法三：</strong></h2>
+<blockquote>
+<p>导入到微信再导出，利用微信功能转码，方便快捷。</p>
+</blockquote>
+<h2 id="参考资料"><strong>参考资料：</strong></h2>
+<ul>
+<li><em><a href="https://github.com/jaysonlong/webvideo-downloader">GitHub项目地址</a></em></li>
+<li><em><a href="google.cn">Google搜索</a></em></li>
+<li><em><a href="https://blog.csdn.net/zwy15841139493/article/details/106031988/">pip安装依赖</a></em></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">昨天</th>
+<th style="text-align:center">今天</th>
+<th style="text-align:center">明天</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">是什么</td>
+<td style="text-align:center">做什么</td>
+<td style="text-align:center">怎么做</td>
+</tr>
+</tbody>
+</table>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><strong>准备工作：</strong></a></li>
+<li><a href="#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><strong>操作步骤：</strong></a></li>
+<li><a href="#%E6%96%B9%E6%B3%95%E4%BA%8C"><strong>方法二：</strong></a></li>
+<li><a href="#%E6%96%B9%E6%B3%95%E4%B8%89"><strong>方法三：</strong></a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><strong>参考资料：</strong></a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://lieying8.github.io/post/hello-gridea/">
+              <h3 class="post-title">
+                Hello Gridea
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://lieying8.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
