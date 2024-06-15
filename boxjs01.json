@@ -1,0 +1,17 @@
+{
+    "settings": {
+        "websiteList": {
+            "title": "网站列表",
+            "type": "textarea",
+            "value": "[
+                \"http://8dsa.com\",
+                \"http://2.9qaz.com\",
+                \"https://xiaobaodang.com\",
+                \"https://shang8888.com:5001\",
+                \"http://shang.iask.in:5000\",
+                \"https://a.9qaz.com\"
+            ]",
+            "desc": "需要检测的网站列表，每行一个网址"
+        }
+    }
+}
