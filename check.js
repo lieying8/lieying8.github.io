@@ -4,7 +4,7 @@
 
 
 const websites = [
-    'http://8dsa.com',
+    'https://8dsa.com',
     'http://2.9qaz.com',
     'https://xiaobaodang.com',
     'https://shang8888.com:5001',
