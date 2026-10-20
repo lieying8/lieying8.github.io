@@ -5,10 +5,10 @@
 
 const websites = [
     'https://8dsa.com',
-    'http://2.9qaz.com',
+    'https://2.9qaz.com',
     'https://xiaobaodang.com',
     'https://shang8888.com:5001',
-    'http://shang.iask.in:5000',
+    'https://6e72530o8.vicp.fun:5001',
     'https://a.9qaz.com',
     // 添加更多网站
 ];
